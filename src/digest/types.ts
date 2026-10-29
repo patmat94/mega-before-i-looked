@@ -28,6 +28,7 @@ export type Night = {
   night: string; // YYYY-MM-DD
   rows: DigestRow[]; // sorted by job, so the page and the JSON never disagree (ADR 0001)
   badLines: number; // lines that did not parse: counted, never thrown
+  counts: Record<RunStatus, number>; // parsed lines per status, for the board (§ 2c)
 };
 
 // null: no file for that night (or not a YYYY-MM-DD night) → 404. An empty file → rows: [].
