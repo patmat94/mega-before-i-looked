@@ -30,6 +30,21 @@ Closing one, with the closing comment from AGENTS.md:
 gh issue close <n> -c "<closing comment>"
 ```
 
+## What every issue carries
+
+Agreed with the human for plan morning-digest (2026-10-29). Use it for the next plan unless
+the human changes it; if they do, change it here.
+
+- Body opens with `Source: plan.md § <n>`, `<n>` as the plan heads it (`1`, `2a`, …).
+- Label `plan:<plan name from plan.md frontmatter>`, e.g. `plan:morning-digest`.
+- Then `## Scope`, `## Done when` (one checkable line), `## Blocked by` (`#n`, or `—`).
+  When a part can start before its blocker is done, say so: `#1 to start; #2 to finish`.
+- A step that waits on a person (a review, a reply) is done only when they have answered, not
+  when it is sent. Leave it open with what it waits on; it blocks the steps after it.
+
+Commit messages say `closes #n`; a push to the default branch closes the issue, so add the
+closing comment from AGENTS.md right after the push.
+
 ## No `gh`
 
 Steps 1–4 hold either way. GitHub reachable another way (a connector, the REST API, the web UI):
